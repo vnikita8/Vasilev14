@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,30 @@ namespace CustomBank
         private int balance;
         private AccountType type;
         private Queue<BankTransaction> Transactions = new Queue<BankTransaction>();
+
+        public static bool operator ==(BankAccount a, BankAccount b)
+        {
+            if (a.accountNumber == b.accountNumber) return true;
+            else return false;
+        }
+        public static bool operator !=(BankAccount a, BankAccount b)
+        {
+            if (a.accountNumber != b.accountNumber) return true;
+            else return false;
+        }
+        public bool Equals(BankAccount obj)
+        {
+            if (obj == null)
+                return false;
+
+            return obj.balance == balance && obj.type == type;
+        }
+
+        public override int GetHashCode()
+        {
+            return balance + (int)type;
+        }
+
 
         public BankAccount()
         {
