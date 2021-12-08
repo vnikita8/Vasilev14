@@ -27,12 +27,12 @@ namespace CustomBank
             if (a.accountNumber != b.accountNumber) return true;
             else return false;
         }
-        public bool Equals(BankAccount obj)
+        public override bool Equals(Object obj)
         {
             if (obj == null)
                 return false;
-
-            return obj.balance == balance && obj.type == type;
+            
+            return true;
         }
 
         public override int GetHashCode()
@@ -120,6 +120,11 @@ namespace CustomBank
         public Queue<BankTransaction> getTransactions()
         {
             return Transactions;
+        }
+
+        public override string ToString()
+        {
+            return $"{accountNumber}, {type}, {balance}";
         }
         // (Удалено)  public void ChangeBalance(int money) {this.balance = money;}  (Удалено)//
         // (Удалено)  public void ChangeType(AccountType type) {this.type = type;}  (Удалено)//

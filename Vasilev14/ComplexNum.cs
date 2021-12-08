@@ -10,6 +10,7 @@ namespace Vasilev14
     {
         public int a;
         public int b;
+
         public ComplexNum(int a, int b) { this.a = a; this.b = b; }
 
         public static ComplexNum operator +(ComplexNum a, ComplexNum b)
@@ -45,5 +46,14 @@ namespace Vasilev14
             return $"{a} + {b}i";
         }
 
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

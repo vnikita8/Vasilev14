@@ -17,7 +17,6 @@ namespace Vasilev14
             Mydel mydel = new Mydel(Book.SortByName);
             mydel(a, b);
             BooksLibrary.LibrarySort(mydel);
-            Comparison<Mydel>.CreateDelegate( , Book.SortByPublisher);
         }
         static void asasa() 
         {
