@@ -92,12 +92,23 @@ namespace Vasilev14
             number1.numerator *= number2.denominator;
             return number1;
         }
+
         public static RacNumbers operator %(RacNumbers number1, RacNumbers number2)
         {
             //Потом
             number1.denominator *= number2.numerator;
             number1.numerator *= number2.denominator;
             return number1;
+        }
+
+        public float getFloat()
+        {
+            return numerator / denominator;
+        }
+
+        public override string ToString()
+        {
+            return $"{numerator}/ {denominator}";
         }
     }
 }
